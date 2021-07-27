@@ -4,7 +4,7 @@ let arrayBoolean = [];
 
 function arrayL(letter) {
   let array = []
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 8; i++) {
     array.push(letter + (i + 1))
   }
   return array;
@@ -12,20 +12,20 @@ function arrayL(letter) {
 //array boolean
 function arrayB(param) {
   let array = []
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 8; i++) {
     array.push(param)
   }
   return array;
 }
 // matriz boolean
 function matrizCreate(param, array) {
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 8; i++) {
     array.push(arrayB(param))
   }
   return array;
 }
 
-matriz = [arrayL('a'), arrayL('b'), arrayL('c'), arrayL('d'), arrayL('e'), arrayL('f')]
+matriz = [arrayL('a'), arrayL('b'), arrayL('c'), arrayL('d'), arrayL('e'), arrayL('f'), arrayL('g'), arrayL('h')]
 let visited = matrizCreate(false, arrayBoolean);
 
 
@@ -40,7 +40,7 @@ let locked = false;
 // Validações
 // Checar se a posição é valida
 function CheckBoundaries(x, y) {
-  return x >= 0 && y >= 0 && x < 6 && y < 6;
+  return x >= 0 && y >= 0 && x < 8 && y < 8;
 }
 
 // Checar se a posição ja foi percorrida
@@ -48,7 +48,6 @@ function goHorse(x, y) {
 
   if (!locked) {
     console.log(matriz[x][y]);
-
     visited[x][y] = true;
 
 
@@ -63,3 +62,4 @@ function goHorse(x, y) {
 }
 
 goHorse(0, 0);
+
