@@ -62,4 +62,3 @@ function goHorse(x, y) {
 }
 
 goHorse(0, 0);
-
