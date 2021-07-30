@@ -1,4 +1,3 @@
-//  Passeio do Cavalo
 let matriz = [];
 let arrayBoolean = [];
 
@@ -31,8 +30,8 @@ let visited = matrizCreate(false, arrayBoolean);
 
 // movimentos que o cavalo pode executar 
 // a ordem que elenca o movimento influencia na saída
-let dx = [2, 1, -2, 1, -2, -1, -1, 2];
-let dy = [1, 2, 1, -2, -1, -2, 2, -1];
+let dx = [2, 2, -1, 1, 1, -2, -2, -1];
+let dy = [-1, 1, -2, 2, -2, 1, -1, 2];
 
 
 let locked = false;
@@ -54,11 +53,12 @@ function goHorse(x, y) {
     for (i = 0; i < dx.length; ++i) {
       let new_x = x + dx[i];
       let new_y = y + dy[i];
-      if (CheckBoundaries(new_x, new_y)
-        && !visited[new_x][new_y]) goHorse(new_x, new_y)
+      if (CheckBoundaries(new_x, new_y) && !visited[new_x][new_y]) { goHorse(new_x, new_y); }
+
     }
   }
   locked = true;
+
 }
 
 goHorse(0, 0);
